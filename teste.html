@@ -1,0 +1,113 @@
+<html>
+    <head>
+    </head>
+    <style>
+    body { 
+        font-size:60;
+    }    
+    table {border-style: solid;
+        border-width: 0px;
+        border-color: black;
+        border-top: 0px;
+        width:100%;
+        border-spacing:0px;}
+    tr {border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        border-spacing:0px;}
+    td {border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        border-spacing:0px;
+        font-size:40;
+        height:50px;
+        padding:20px}                    
+    </style>
+    <body>
+        <center>Inscrição No. '.$id.'/'.substr($linha['created_at'],0,4).'</center><br><br><br>
+    <table>
+        <tr>
+            <td colspan="3">
+                Nome Completo: '.$linha['name'].'
+            </td>
+        </tr>        
+        <tr>
+            <td colspan="3">
+                Nome do Pai: '.$linha['father_name'].'
+            </td>
+        </tr>        
+        <tr>
+            <td colspan="3">
+                Nome da Mãe: '.$linha['mother_name'].'
+        </tr>        
+        <tr>
+            <td colspan="3">
+                Data de nascimento: '.$linha['birth_date'].'
+            </td>
+        </tr>        
+        <tr>
+            <td colspan="3">
+                Naturalidade: '.$linha['place_of_birth_city'] . '/' . $linha['place_of_birth_state'].'
+            </td>
+        </tr>    
+        <tr>
+            <td colspan="2">
+                Numero RG: '.$linha['rg_num'].'/'.$linha['rg_state'].'
+            </td>
+            <td>
+                Orgão Emissor: '.$linha['rg_emissor'] .'
+            </td>            
+        </tr> 
+        <tr>
+            <td colspan="3">
+                CPF: '.$linha['cpf'] .'
+            </td>
+        </tr>    
+        <tr>
+            <td colspan="3">
+                Endereço - rua, no, complemento: '.$linha['address'] .'
+            </td>
+        </tr>         
+        <tr>
+            <td colspan="2">
+                Bairro: '.$linha['country'].'
+            </td>
+            <td>
+                Cidade: '.$linha['city'] .'
+            </td>            
+        </tr>                        
+        <tr>
+            <td>
+                CEP: '.$linha['zipcode'].'
+            </td>
+            <td>
+                UF: '.$linha['state'] .'
+            </td>            
+            <td>
+                Telefone: '.$linha['phone'] .'
+            </td>            
+        </tr> 
+        <tr>
+            <td colspan="3">
+                e-mail:: '.$linha['email'] .'
+            </td>
+        </tr>    
+        <tr>
+            <td colspan="3">
+                Idade: '.$linha['age'] .'
+            </td>
+        </tr>    
+        <tr>
+            <td colspan="3">
+                Nível de escolaridade: '.$linha['education_level'] .'
+            </td>
+        </tr>   
+        <tr>
+            <td colspan="2">
+                Altura: '.$linha['height'].'
+            </td>
+            <td>
+                Cor dos olhos: '.$linha['eye_color'] .'
+            </td>            
+        </tr>                                                        
+    </body></html>

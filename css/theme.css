@@ -1,0 +1,41 @@
+
+
+.linha_cad { 
+    /*font-size: 14px;*/ 
+    background-color: whitesmoke;
+    padding-left: 10px;
+    padding-right: 10px;    
+}
+
+.cab_cad {   
+    background-color: lightblue;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.texto_inicial { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-size:14px;*/
+}
+
+.linha_confirma { 
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightseagreen;
+    border-top: 0px;
+    margin: 0 auto;    
+}
+
+.cab_confirm { 
+    margin: 0 auto;
+}
+
+@media (min-width: 801px) {
+    .cab_confirm { 
+        padding-left: 400px;
+        padding-right: 400px;
+        margin: 0 auto;
+    }
+}

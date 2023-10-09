@@ -1,3 +1,2 @@
-<?php
-echo "admin";
+<?php header("location: welcome.php");
 ?>
