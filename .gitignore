@@ -1,1 +1,2 @@
-admin/pdf/
+admin/pdf/*.pdf
+admin/zip/*.zip
