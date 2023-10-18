@@ -176,6 +176,11 @@ $zip = new ZipArchive();
 
 $nome_zip = md5(time());
 
+$path=$_SERVER['DOCUMENT_ROOT'].'/admin/zip/';
+if (!file_exists($path)) {
+    mkdir($path, 0777, true);
+}
+
 $caminho_arquivo_zip = 'zip/'.$nome_zip.'.zip';
 
 if($zip->open($caminho_arquivo_zip, \ZipArchive::CREATE)){ 

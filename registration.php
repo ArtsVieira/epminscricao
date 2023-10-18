@@ -66,10 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $filename1 = "";
         $filename2 = "";
         $filename3 = "";
-        echo $_SERVER['DOCUMENT_ROOT'];
+        //echo $_SERVER['DOCUMENT_ROOT'];
         //$diretorioBase = 'C:\work\php\forminsc\admin\pdf\\';
         $diretorioBase = $_SERVER['DOCUMENT_ROOT'].'/admin/pdf/';
-        echo $diretorioBase;
+        //echo $diretorioBase;
+  //      $path = "sample/path/newfolder";
+        if (!file_exists($diretorioBase)) {
+            mkdir($diretorioBase, 0777, true);
+        }        
         $i = 0;
         foreach ($_FILES["arquivos"]["error"] as $key => $error) {
             if ($error == UPLOAD_ERR_OK) {
