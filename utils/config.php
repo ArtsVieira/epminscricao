@@ -1,16 +1,16 @@
 <?php
     // localhost 
-    /*
-    $dbname = 'forminsc';
+    
+    $dbname = 'epminscricao';
     $host = 'localhost';
     $username = 'root'; //forminsc
-    $password = 'arthur07'; //En|PS8rRTM6L{
-*/
+    $password = 'Artdem10!'; //En|PS8rRTM6L{
+/*
     $dbname = 'epminscricao';
     $host = 'mysql835.umbler.com';
     $username = 'epminscricao'; 
     $password = 'En|PS8rRTM6L{';        
-
+*/
 
     date_default_timezone_set('America/Sao_Paulo');
 

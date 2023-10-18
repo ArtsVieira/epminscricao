@@ -1,2 +1,2 @@
-<?php header("location: welcome.php");
+<?php header("location: admin/welcome.php");
 ?>

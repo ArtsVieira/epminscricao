@@ -26,7 +26,7 @@ while ($linha = $query->fetch(PDO::FETCH_ASSOC)) {
         $file2=$linha['file2'];
     }  
     if($linha['file3'] != ""){
-        $file2=$linha['file3'];
+        $file3=$linha['file3'];
     }                            
     $nome = $linha['name'];
     $html_pdf = '<html>
@@ -167,11 +167,10 @@ $dompdf->render();
 
 
 $nome_pdf ='ficha_inscricao_'.$id.'.pdf';
-$caminho_pdf = 'pdf/'.$nome_pdf;
+$caminho_pdf = 'pdf/';
+$caminho_pdf_nome = 'pdf/'.$nome_pdf;
 
-$file = file_put_contents($caminho_pdf, $dompdf->output());
-
-
+$file = file_put_contents($caminho_pdf_nome, $dompdf->output());
 
 $zip = new ZipArchive();
 
@@ -181,17 +180,17 @@ $caminho_arquivo_zip = 'zip/'.$nome_zip.'.zip';
 
 if($zip->open($caminho_arquivo_zip, \ZipArchive::CREATE)){ 
 
-    $zip->addFile($caminho_pdf,$nome_pdf);
+    $zip->addFile($caminho_pdf.$nome_pdf,$nome_pdf);
     //echo $zip->filename;
     
     if($file1 != ""){
-        $zip->addFile($caminho_pdf,$file1);
+        $zip->addFile($caminho_pdf.$file1,$file1);
     } 
     if($file2 != ""){
-        $zip->addFile($caminho_pdf,$file2);
+        $zip->addFile($caminho_pdf.$file2,$file2);
     }  
     if($file3 != ""){
-        $zip->addFile($caminho_pdf,$file3);
+        $zip->addFile($caminho_pdf.$file3,$file3);
     }                            
 
     $zip->close();
@@ -206,8 +205,6 @@ if($zip->open($caminho_arquivo_zip, \ZipArchive::CREATE)){
 if (file_exists($caminho_arquivo_zip)){
 
     header("Content-Type: application/zip;");
-  //  header("Content-Transfer-Encoding:Binary;\n");        
-  //  header("Content-Length:".filesize($caminho_arquivo_zip).';\n');
     header('Content-Disposition: attachement; filename="'.$nome_zip.'.zip"');
     readfile($caminho_arquivo_zip);
     

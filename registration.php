@@ -66,9 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $filename1 = "";
         $filename2 = "";
         $filename3 = "";
-        //echo $_SERVER['DOCUMENT_ROOT'];
+        echo $_SERVER['DOCUMENT_ROOT'];
         //$diretorioBase = 'C:\work\php\forminsc\admin\pdf\\';
-        $diretorioBase = $_SERVER['DOCUMENT_ROOT'];
+        $diretorioBase = $_SERVER['DOCUMENT_ROOT'].'/admin/pdf/';
+        echo $diretorioBase;
         $i = 0;
         foreach ($_FILES["arquivos"]["error"] as $key => $error) {
             if ($error == UPLOAD_ERR_OK) {
@@ -153,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
             // Prepare uma declaração de atualização
             //$sql = "UPDATE users SET password = :password WHERE id = :id";
-            $sql = "INSERT INTO forminsc.registrations
+            $sql = "INSERT INTO registrations
                     (id, name, father_name, mother_name, birth_date, place_of_birth_city, place_of_birth_state, rg_num, rg_state, rg_emissor, cpf, address, 
                     country, city, zipcode, state, phone, email, education_level, age, height, eye_color,created_at,file1,file2,file3)
                     VALUES(0, :name, :father_name, :mother_name, :birth_date, :place_of_birth_city, :place_of_birth_state, :rg_num,:rg_state, :rg_emissor, :cpf, :address, 
